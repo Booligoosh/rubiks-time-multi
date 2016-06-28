@@ -251,10 +251,10 @@ function solvesList() {
 }
 
 function moreStats() {
-  chartArray = [['Solve number', 'Cuber 1)', 'Cuber 2', 'Cuber 3', 'Cuber 4']];
+  chartArray = [['Solve number', 'Cuber 1', 'Cuber 2', 'Cuber 3', 'Cuber 4']];
   chartLoop = 0;
   while (chartLoop < solves1.length) {
-    chartArray.push(["Solve (seconds) " + (chartLoop + 1), Number(solves1[chartLoop]) / 100, Number(solves2[chartLoop]) / 100, Number(solves3[chartLoop]) / 100, Number(solves4[chartLoop]) / 100]);
+    chartArray.push(["Solve " + (chartLoop + 1), Number(solves1[chartLoop]) / 100, Number(solves2[chartLoop]) / 100, Number(solves3[chartLoop]) / 100, Number(solves4[chartLoop]) / 100]);
     //OLD CHART FORMAT: chartArray.push(["Solve " + (chartLoop + 1), Number(solves1[chartLoop]) / 100]);
     chartLoop = chartLoop + 1;
   }
