@@ -69,6 +69,11 @@ hr {
   margin-right: 5em;
   border-style: solid;
 }
+#graph {
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
 #graph svg rect:nth-child(1) {
   fill: white;
 }
