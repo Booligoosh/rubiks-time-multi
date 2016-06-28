@@ -75,15 +75,9 @@ hr {
 #graph svg rect:nth-child(2) {
   fill: rgba(0,0,0,0);
 }
-#graph svg path {
-  stroke: white;
-}
 #graph svg text {
   fill: white;
   font-family: 'Open Sans', sans-serif;
-}
-#graph svg g:nth-child(4) {
-  display: none;
 }
 #graph svg g:nth-child(5) g:nth-child(4) g text {
   fill: white;
