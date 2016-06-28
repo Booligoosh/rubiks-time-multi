@@ -2,21 +2,21 @@
 <html>
   <head>
     <title>Rubik's Time</title>
-    <link rel="stylesheet" type="text/css" href="https://booligoosh.github.io/rubiks-time/style.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://booligoosh.github.io/rubiks-time/z-icon-57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://booligoosh.github.io/rubiks-time/z-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://booligoosh.github.io/rubiks-time/z-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://booligoosh.github.io/rubiks-time/z-icon-144.png">
-    <link rel="icon" type="image/png" href="https://booligoosh.github.io/rubiks-time/z-favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://booligoosh.github.io/rubiks-time-multi/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-144.png">
+    <link rel="icon" type="image/png" href="https://booligoosh.github.io/rubiks-time-multi/z-favicon.png">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
     </script>
   </head>
-  <body id="body" onkeydown="spaceDown()" onkeyup="spaceUp()">
-    <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
-    <img id="stats" onclick="statsClicked()" src="https://booligoosh.github.io/rubiks-time/stats.svg">
+  <body id="body" onkeydown="keyDown()" onkeyup="keyUp()">
+    <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time-multi/gear.svg">
+    <img id="stats" onclick="statsClicked()" src="https://booligoosh.github.io/rubiks-time-multi/stats.svg">
     <div id="screen1" style="display: block;">
       <h1>Rubik's Time</h1>
       <h2>Ready</h2>
@@ -28,10 +28,10 @@
     <div id="screen3" style="display: none;">
       <h1>Settings</h1>
       <h2>Inspection time (seconds)</h2>
-      <span class="combo-span" id="inspectionspan"><img src="https://booligoosh.github.io/rubiks-time/plus.svg" onclick="iPlus()"><h2 id="inspection">15</h2><img src="https://booligoosh.github.io/rubiks-time/minus.svg" onclick="iMinus()"></span>
+      <span class="combo-span" id="inspectionspan"><img src="https://booligoosh.github.io/rubiks-time-multi/plus.svg" onclick="iPlus()"><h2 id="inspection">15</h2><img src="https://booligoosh.github.io/rubiks-time/minus.svg" onclick="iMinus()"></span>
       <hr>
       <h2>Color</h2>
-      <span class="combo-span" id="colorspan"><img src="https://booligoosh.github.io/rubiks-time/left.svg" onclick="cLeft()"><h2 id="color">Red</h2><img src="https://booligoosh.github.io/rubiks-time/right.svg" onclick="cRight()"></span>
+      <span class="combo-span" id="colorspan"><img src="https://booligoosh.github.io/rubiks-time-multi/left.svg" onclick="cLeft()"><h2 id="color">Red</h2><img src="https://booligoosh.github.io/rubiks-time/right.svg" onclick="cRight()"></span>
     </div>
     <div id="screen4" style="display: none;">
       <h1>Stats</h1>
@@ -61,7 +61,7 @@
       <h2 id="bestaverageof12"></h2>
     </div>
 
-    <script src="https://booligoosh.github.io/rubiks-time/script.js"></script>
+    <script src="https://booligoosh.github.io/rubiks-time-multi/script.js"></script>
     <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
 var sc_project=11021926; 
