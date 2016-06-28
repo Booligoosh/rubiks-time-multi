@@ -1,4 +1,4 @@
-if (localStorage.rubiks == undefined) {
+if (localStorage.rubiksMulti == undefined) {
   var startDown = false;
   var startUp = false;
   var inspectionStarted = false;
@@ -11,7 +11,10 @@ if (localStorage.rubiks == undefined) {
   var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
   var backgroundRGB = "229, 57, 53";
   var backgroundName = "Red";
-  var solves = [];
+  var solves1 = [];
+  var solves2 = [];
+  var solves3 = [];
+  var solves4 = [];
   var inspectionStartOn = 15;
   var inspection;
   var inspectionInterval;
@@ -27,7 +30,7 @@ if (localStorage.rubiks == undefined) {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
-  localStorage.rubiks = true;
+  localStorage.rubiksMulti = true;
 }
 else {
   //Normal init with localStorage vars missing
@@ -58,11 +61,14 @@ else {
   var chartArray;
   //localStorage vars
   if (typeof(Storage) !== "undefined") {
-    var inspectionStartOn = Number(localStorage.rubiksInspectionStartOn);
+    var inspectionStartOn = Number(localStorage.rubiksMultiInspectionStartOn);
     document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-    var backgroundNum = Number(localStorage.rubiksBackgroundNum);
+    var backgroundNum = Number(localStorage.rubiksMultiBackgroundNum);
     backgroundChange();
-    var solves = localStorage.rubiksSolves.split(',');
+    var solves1 = localStorage.rubiksMultiSolves1.split(',');
+    var solves2 = localStorage.rubiksMultiSolves2.split(',');
+    var solves3 = localStorage.rubiksMultiSolves3.split(',');
+    var solves4 = localStorage.rubiksMultiSolves4.split(',');
   }
   else {
     var cookiesList = document.cookie.split("|");
@@ -70,7 +76,10 @@ else {
     document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
     var backgroundNum = Number(cookiesList[2]);
     backgroundChange();
-    var solves = cookiesList[3].split(',');
+    var solves1 = cookiesList[3].split(',');
+    var solves2 = cookiesList[4].split(',');
+    var solves3 = cookiesList[5].split(',');
+    var solves4 = cookiesList[6].split(',');
   }
 
 }
@@ -118,11 +127,11 @@ function startSolve() {
 
 function stopSolve() {
   clearTimeout(solveTimer);
-  solves.push(solve);
+  //solves.push(solve);
   updateStorage();
   document.getElementById("screen2sub").style.display = "block";
   document.getElementById("screen2sub").innerHTML = "Ready";
-  document.getElementById("numbers").innerHTML = clockify(solves[solves.length - 1]);
+  document.getElementById("numbers").innerHTML = clockify(solve);
   newSolve();
 }
 
@@ -145,7 +154,8 @@ function clockify(num) {
   return(min + ":" + sec + ":" + hund);
 }
 
-function spaceDown() {
+function keyDown() {
+  //space
   if (event.keyCode === 32) {
     if (startDown === false) {
       showScreen(2);
@@ -163,9 +173,38 @@ function spaceDown() {
       clearTimeout(inspectionTimer);
     }
   }
+  //left
+  if (event.keyCode === 37) {
+    if (solveStarted === true) {
+      solves1.push(solve);
+      stopSolve();
+    }
+  }
+  //up
+  if (event.keyCode === 38) {
+    if (solveStarted === true) {
+      solves2.push(solve);
+      stopSolve();
+    }
+  }
+  //right
+  if (event.keyCode === 39) {
+    if (solveStarted === true) {
+      solves3.push(solve);
+      stopSolve();
+    }
+  }
+  //down
+  if (event.keyCode === 40) {
+    if (solveStarted === true) {
+      solves4.push(solve);
+      stopSolve();
+    }
+  }
 }
 
-function spaceUp() {
+function keyUp() {
+  //space
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
       inspection = inspectionStartOn + 1;
@@ -208,9 +247,9 @@ function statsClicked() {
 function solvesList() {
   document.getElementById("solveslist").innerHTML = "";
   solvesListLoop = -1;
-  while (solvesListLoop < solves.length - 1) {
+  while (solvesListLoop < solves1.length - 1) {
     solvesListLoop = solvesListLoop + 1;
-    addToSolvesDisplay(clockify(solves[solvesListLoop]));
+    addToSolvesDisplay(clockify(solves1[solvesListLoop]));
   }
   showScreen(5);
 }
@@ -218,20 +257,20 @@ function solvesList() {
 function moreStats() {
   chartArray = [['Solve number', 'Time (seconds)']];
   chartLoop = 0;
-  while (chartLoop < solves.length) {
-    chartArray.push(["Solve " + (chartLoop + 1) + " - " + clockify(Number(solves[chartLoop])), Number(solves[chartLoop]) / 100]);
-    //OLD CHART FORMAT: chartArray.push(["Solve " + (chartLoop + 1), Number(solves[chartLoop]) / 100]);
+  while (chartLoop < solves1.length) {
+    chartArray.push(["Solve " + (chartLoop + 1) + " - " + clockify(Number(solves1[chartLoop])), Number(solves1[chartLoop]) / 100]);
+    //OLD CHART FORMAT: chartArray.push(["Solve " + (chartLoop + 1), Number(solves1[chartLoop]) / 100]);
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  document.getElementById("average").innerHTML = "Average - " + clockify(averageOfArray(solves));
-  if (solves.length >= 5) {
-    var averagesOfFive = averageOfFivesOfArray(solves);
+  document.getElementById("average").innerHTML = "Average - " + clockify(averageOfArray(solves1));
+  if (solves1.length >= 5) {
+    var averagesOfFive = averageOfFivesOfArray(solves1);
     document.getElementById("currentaverageof5").innerHTML = "Current average of 5 - " + clockify(averagesOfFive[averagesOfFive.length - 1]);
     document.getElementById("bestaverageof5").innerHTML = "Best average of 5 - " + clockify(Array.min(averagesOfFive));
   }
-  if (solves.length >= 12) {
-    var averagesOfTwelve = averageOfTwelvesOfArray(solves);
+  if (solves1.length >= 12) {
+    var averagesOfTwelve = averageOfTwelvesOfArray(solves1);
     document.getElementById("currentaverageof12").innerHTML = "Current average of 12 - " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
     document.getElementById("bestaverageof12").innerHTML = "Best average of 12 - " + clockify(Array.min(averagesOfTwelve));
   }
@@ -283,7 +322,7 @@ function addToSolvesDisplay(data) {
   var t = document.createTextNode(data);
   h6.appendChild(t);
   document.getElementById("solveslist").appendChild(h6);
-  document.getElementById("solvescount").innerHTML = solves.length + " solves so far.";
+  document.getElementById("solvescount").innerHTML = solves1.length + " solves so far.";
 }
 
 function iPlus() {
@@ -326,9 +365,9 @@ function backgroundChange() {
 }
 
 function deleteSolve(index) {
-  var r = confirm("You have chosen to delete solve " + Number(index + 1) + " - " + clockify(solves[index]) + "\nAre you sure you want to delete it?");
+  var r = confirm("You have chosen to delete solve " + Number(index + 1) + " - " + clockify(solves1[index]) + "\nAre you sure you want to delete it?");
   if (r == true) {
-    solves.splice(index, 1);
+    solves1.splice(index, 1);
     updateStorage();
     solvesList();
   } else {
@@ -338,11 +377,11 @@ function deleteSolve(index) {
 
 function updateStorage() {
     if (typeof(Storage) !== "undefined") {
-      localStorage.rubiksInspectionStartOn = inspectionStartOn;
-      localStorage.rubiksBackgroundNum = backgroundNum;
-      localStorage.rubiksSolves = solves.join();
+      localStorage.rubiksMultiInspectionStartOn = inspectionStartOn;
+      localStorage.rubiksMultiBackgroundNum = backgroundNum;
+      localStorage.rubiksMultiSolves1 = solves1.join();
     } else {
-      document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
+      document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves1.join() + "|" + solves2.join() + "|" + solves3.join() + "|" + solves4.join();
     }
     
 }
