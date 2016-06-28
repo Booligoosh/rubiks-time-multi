@@ -380,6 +380,9 @@ function updateStorage() {
       localStorage.rubiksMultiInspectionStartOn = inspectionStartOn;
       localStorage.rubiksMultiBackgroundNum = backgroundNum;
       localStorage.rubiksMultiSolves1 = solves1.join();
+      localStorage.rubiksMultiSolves2 = solves2.join();
+      localStorage.rubiksMultiSolves3 = solves3.join();
+      localStorage.rubiksMultiSolves4 = solves4.join();
     } else {
       document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves1.join() + "|" + solves2.join() + "|" + solves3.join() + "|" + solves4.join();
     }
