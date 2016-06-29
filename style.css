@@ -67,6 +67,9 @@ h6 {
   height: 2.5em;
   width: auto;
 }
+.key {
+    margin-top: 7em;
+}
 .key span {
   display: block;
 }
