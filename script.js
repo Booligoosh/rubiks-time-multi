@@ -29,10 +29,10 @@ if (localStorage.rubiksMulti == undefined) {
   var solveTimer;
   var solvesListLoop;
   var playersDone = 0;
-  var 1done = false;
-  var 2done = false;
-  var 3done = false;
-  var 4done = false;
+  var player1done = false;
+  var player2done = false;
+  var player3done = false;
+  var player4done = false;
   var chartLoop;
   var chartArray;
   localStorage.rubiksMulti = true;
@@ -63,6 +63,10 @@ else {
   var solveTimer;
   var solvesListLoop;
   var playersDone = 0;
+  var player1done = false;
+  var player2done = false;
+  var player3done = false;
+  var player4done = false;
   var chartLoop;
   var chartArray;
   //localStorage vars
@@ -178,8 +182,8 @@ function keyDown() {
   }
   //left
   if (event.keyCode === 37) {
-    if (solveStarted === true && 1done === false) {
-      1done = true;
+    if (solveStarted === true && player1done === false) {
+      player1done = true;
       document.getElementById("1").style = "-webkit-filter: hue-rotate(90deg) brightness(200%); filter: hue-rotate(90deg) brightness(200%)";
       solves1.push(solve);
       playersDone = playersDone + 1;
@@ -190,8 +194,8 @@ function keyDown() {
   }
   //up
   if (event.keyCode === 38) {
-    if (solveStarted === true && 2done === false) {
-      2done = true;
+    if (solveStarted === true && player2done === false) {
+      player2done = true;
       document.getElementById("2").style = "-webkit-filter: hue-rotate(90deg) brightness(200%); filter: hue-rotate(90deg) brightness(200%)";
       solves2.push(solve);
       playersDone = playersDone + 1;
@@ -202,8 +206,8 @@ function keyDown() {
   }
   //right
   if (event.keyCode === 39) {
-    if (solveStarted === true && 3done === false) {
-      3done = true;
+    if (solveStarted === true && player3done === false) {
+      player3done = true;
       document.getElementById("3").style = "-webkit-filter: hue-rotate(90deg) brightness(200%); filter: hue-rotate(90deg) brightness(200%)";
       solves3.push(solve);
       playersDone = playersDone + 1;
@@ -214,8 +218,8 @@ function keyDown() {
   }
   //down
   if (event.keyCode === 40) {
-    if (solveStarted === true && 4done === false) {
-      4done = true;
+    if (solveStarted === true && player4done === false) {
+      player4done = true;
       document.getElementById("4").style = "-webkit-filter: hue-rotate(90deg) brightness(200%); filter: hue-rotate(90deg) brightness(200%)";
       solves4.push(solve);
       playersDone = playersDone + 1;
