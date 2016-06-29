@@ -178,7 +178,9 @@ function keyDown() {
       solves1.push(solve);
       playersDone = playersDone + 1;
       if (playersDone === 4) {
-        stopSol    }
+        stopSolve();
+      }
+    }
   }
   //up
   if (event.keyCode === 38) {
@@ -189,7 +191,6 @@ function keyDown() {
         stopSolve();
       }
     }
-
   }
   //right
   if (event.keyCode === 39) {
@@ -199,6 +200,7 @@ function keyDown() {
       if (playersDone === 4) {
         stopSolve();
       }
+    }
   }
   //down
   if (event.keyCode === 40) {
@@ -208,6 +210,7 @@ function keyDown() {
       if (playersDone === 4) {
         stopSolve();
       }
+    }
   }
 }
 
