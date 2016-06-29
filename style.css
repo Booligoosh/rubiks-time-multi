@@ -79,6 +79,7 @@ h6 {
 .key span img {
   padding-left: 2.5em;
   padding-right: 2.5em;
+  transition: all, 0.5s;
 }
 #solveslist h6 {
   transition: all, 0.25s;
