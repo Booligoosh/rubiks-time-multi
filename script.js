@@ -190,7 +190,7 @@ function keyDown() {
   if (event.keyCode === 37) {
     if (solveStarted === true && player1done === false) {
       player1done = true;
-      document.getElementById("1").style = "-webkit-filter: brightness(200%); filter: brightness(200%)";
+      document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
       solves1.push(solve);
       playersDone = playersDone + 1;
       if (playersDone >= 4) {
@@ -202,7 +202,7 @@ function keyDown() {
   if (event.keyCode === 38) {
     if (solveStarted === true && player2done === false) {
       player2done = true;
-      document.getElementById("2").style = "-webkit-filter: brightness(200%); filter: brightness(200%)";
+      document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
       solves2.push(solve);
       playersDone = playersDone + 1;
       if (playersDone >= 4) {
@@ -214,7 +214,7 @@ function keyDown() {
   if (event.keyCode === 39) {
     if (solveStarted === true && player3done === false) {
       player3done = true;
-      document.getElementById("3").style = "-webkit-filter: brightness(200%); filter: brightness(200%)";
+      document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
       solves3.push(solve);
       playersDone = playersDone + 1;
       if (playersDone >= 4) {
@@ -226,7 +226,7 @@ function keyDown() {
   if (event.keyCode === 40) {
     if (solveStarted === true && player4done === false) {
       player4done = true;
-      document.getElementById("4").style = "-webkit-filter: brightness(200%); filter: brightness(200%)";
+      document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
       solves4.push(solve);
       playersDone = playersDone + 1;
       if (playersDone >= 4) {
@@ -240,6 +240,10 @@ function keyUp() {
   //space
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
+      document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+      document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+      document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+      document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
       inspection = inspectionStartOn + 1;
       inspectionStarted = true;
       startInspection();
