@@ -422,10 +422,10 @@ function newSolve() {
   inspectionStarted = false;
   solveStarted = false;
   playersDone = false;
-  1done = 0;
-  2done = false;
-  3done = false;
-  4done = false;
+  player1done = 0;
+  player2done = false;
+  player3done = false;
+  player4done = false;
 }
 
 //GOOGLE CHARTS SCRIPTS
