@@ -29,6 +29,10 @@ if (localStorage.rubiksMulti == undefined) {
   var solveTimer;
   var solvesListLoop;
   var playersDone = 0;
+  var 1done = false;
+  var 2done = false;
+  var 3done = false;
+  var 4done = false;
   var chartLoop;
   var chartArray;
   localStorage.rubiksMulti = true;
@@ -174,40 +178,44 @@ function keyDown() {
   }
   //left
   if (event.keyCode === 37) {
-    if (solveStarted === true) {
+    if (solveStarted === true && 1done === false) {
+      1done = true;
       solves1.push(solve);
       playersDone = playersDone + 1;
-      if (playersDone === 4) {
+      if (playersDone >= 4) {
         stopSolve();
       }
     }
   }
   //up
   if (event.keyCode === 38) {
-    if (solveStarted === true) {
+    if (solveStarted === true && 2done === false) {
+      2done = true;
       solves2.push(solve);
       playersDone = playersDone + 1;
-      if (playersDone === 4) {
+      if (playersDone >= 4) {
         stopSolve();
       }
     }
   }
   //right
   if (event.keyCode === 39) {
-    if (solveStarted === true) {
+    if (solveStarted === true && 3done === false) {
+      3done = true;
       solves3.push(solve);
       playersDone = playersDone + 1;
-      if (playersDone === 4) {
+      if (playersDone >= 4) {
         stopSolve();
       }
     }
   }
   //down
   if (event.keyCode === 40) {
-    if (solveStarted === true) {
+    if (solveStarted === true && 4done === false) {
+      4done = true;
       solves4.push(solve);
       playersDone = playersDone + 1;
-      if (playersDone === 4) {
+      if (playersDone >= 4) {
         stopSolve();
       }
     }
@@ -405,6 +413,11 @@ function newSolve() {
   startUp = false;
   inspectionStarted = false;
   solveStarted = false;
+  playersDone = false;
+  1done = 0;
+  2done = false;
+  3done = false;
+  4done = false;
 }
 
 //GOOGLE CHARTS SCRIPTS
