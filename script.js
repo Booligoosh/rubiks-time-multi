@@ -106,6 +106,12 @@ function showScreen(num) {
   document.getElementById("screen5").style.display = "none";
   document.getElementById("screen6").style.display = "none";
   document.getElementById("screen" + num).style.display = "block";
+  if (num === 1 || num === 2) {
+    document.getElementById("key").style.display = "block";
+  }
+  else {
+    document.getElementById("key").style.display = "none";
+  }
   prevScreen = currentScreen;
   currentScreen = num;
 }
