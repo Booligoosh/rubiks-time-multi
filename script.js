@@ -240,10 +240,10 @@ function keyUp() {
   //space
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
-      document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+      document.getElementById("1").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+      document.getElementById("2").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+      document.getElementById("3").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+      document.getElementById("4").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
       inspection = inspectionStartOn + 1;
       inspectionStarted = true;
       startInspection();
