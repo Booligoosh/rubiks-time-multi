@@ -68,14 +68,17 @@ h6 {
   width: auto;
 }
 .key {
-    margin-top: 7em;
+  position: fixed;
+  bottom: 1em;
+  left: 0;
+  right: 0;
 }
 .key span {
   display: block;
 }
 .key span img {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
 }
 #solveslist h6 {
   transition: all, 0.25s;
