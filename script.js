@@ -427,8 +427,8 @@ function newSolve() {
   startUp = false;
   inspectionStarted = false;
   solveStarted = false;
-  playersDone = false;
-  player1done = 0;
+  playersDone = 0;
+  player1done = false;
   player2done = false;
   player3done = false;
   player4done = false;
