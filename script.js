@@ -149,9 +149,9 @@ function stopSolve() {
   document.getElementById("screen2sub").innerHTML = "Ready";
   document.getElementById("numbers").innerHTML = clockify(solve);
   document.getElementById("time1").innerHTML = clockify(solves1[solves1.length - 1]);
-  document.getElementById("time2").innerHTML = clockify(solves2[solves2.length - 1];
-  document.getElementById("time3").innerHTML = clockify(solves3[solves3.length - 1];
-  document.getElementById("time4").innerHTML = clockify(solves4[solves4.length - 1];
+  document.getElementById("time2").innerHTML = clockify(solves2[solves2.length - 1]);
+  document.getElementById("time3").innerHTML = clockify(solves3[solves3.length - 1]);
+  document.getElementById("time4").innerHTML = clockify(solves4[solves4.length - 1]);
   newSolve();
 }
 
