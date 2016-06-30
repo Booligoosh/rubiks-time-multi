@@ -148,6 +148,10 @@ function stopSolve() {
   document.getElementById("screen2sub").style.display = "block";
   document.getElementById("screen2sub").innerHTML = "Ready";
   document.getElementById("numbers").innerHTML = clockify(solve);
+  document.getElementById("time1").style = "opacity: 11; filter: alpha(opacity=1);";
+  document.getElementById("time2").style = "opacity: 1; filter: alpha(opacity=1);";
+  document.getElementById("time3").style = "opacity: 1; filter: alpha(opacity=1);";
+  document.getElementById("time4").style = "opacity: 1; filter: alpha(opacity=1);";
   document.getElementById("time1").innerHTML = clockify(solves1[solves1.length - 1]);
   document.getElementById("time2").innerHTML = clockify(solves2[solves2.length - 1]);
   document.getElementById("time3").innerHTML = clockify(solves3[solves3.length - 1]);
@@ -181,10 +185,10 @@ function keyDown() {
       showScreen(2);
       document.getElementById("screen2sub").style.display = "none";
       document.getElementById("numbers").innerHTML = "Ready";
-      document.getElementById("time1").innerHTML = "";
-      document.getElementById("time2").innerHTML = "";
-      document.getElementById("time3").innerHTML = "";
-      document.getElementById("time4").innerHTML = "";
+      document.getElementById("time1").style = "opacity: 0; filter: alpha(opacity=0);";
+      document.getElementById("time2").style = "opacity: 0; filter: alpha(opacity=0);";
+      document.getElementById("time3").style = "opacity: 0; filter: alpha(opacity=0);";
+      document.getElementById("time4").style = "opacity: 0; filter: alpha(opacity=0);";
       startDown = true;
     }
     if (inspectionStarted === true && solveStarted === false) {
