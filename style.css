@@ -12,7 +12,7 @@ body {
   text-align: center;
 }
 h1 {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 0;
   font-size: 9em;
   font-weight: 100;
@@ -43,6 +43,9 @@ h6 {
   margin-top: 0;
   margin-bottom: 0.5em;
   font-weight: 100;
+}
+#multiplayer {
+  margin-top: 0;
 }
 #numbers {
   margin-top: 1.5em;
