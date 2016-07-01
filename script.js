@@ -179,86 +179,90 @@ function clockify(num) {
 }
 
 function keyDown() {
-  //space
-  if (event.keyCode === 32) {
-    if (startDown === false) {
-      showScreen(2);
-      document.getElementById("screen2sub").style.display = "none";
-      document.getElementById("numbers").innerHTML = "Ready";
-      document.getElementById("time1").style = "opacity: 0; filter: alpha(opacity=0);";
-      document.getElementById("time2").style = "opacity: 0; filter: alpha(opacity=0);";
-      document.getElementById("time3").style = "opacity: 0; filter: alpha(opacity=0);";
-      document.getElementById("time4").style = "opacity: 0; filter: alpha(opacity=0);";
-      startDown = true;
-    }
-    if (inspectionStarted === true && solveStarted === false) {
-      solve = 0;
-      solveStarted = true;
-      startSolve();
-      clearTimeout(inspectionTimer);
-    }
-  }
-  //left
-  if (event.keyCode === 37) {
-    if (solveStarted === true && player1done === false) {
-      player1done = true;
-      document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      solves1.push(solve);
-      playersDone = playersDone + 1;
-      if (playersDone >= 4) {
-        stopSolve();
+  if (currentScreen === 1 || currentScreen === 2) {
+    //space
+    if (event.keyCode === 32) {
+      if (startDown === false) {
+        showScreen(2);
+        document.getElementById("screen2sub").style.display = "none";
+        document.getElementById("numbers").innerHTML = "Ready";
+        document.getElementById("time1").style = "opacity: 0; filter: alpha(opacity=0);";
+        document.getElementById("time2").style = "opacity: 0; filter: alpha(opacity=0);";
+        document.getElementById("time3").style = "opacity: 0; filter: alpha(opacity=0);";
+        document.getElementById("time4").style = "opacity: 0; filter: alpha(opacity=0);";
+        startDown = true;
+      }
+      if (inspectionStarted === true && solveStarted === false) {
+        solve = 0;
+        solveStarted = true;
+        startSolve();
+        clearTimeout(inspectionTimer);
       }
     }
-  }
-  //up
-  if (event.keyCode === 38) {
-    if (solveStarted === true && player2done === false) {
-      player2done = true;
-      document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      solves2.push(solve);
-      playersDone = playersDone + 1;
-      if (playersDone >= 4) {
-        stopSolve();
+    //left
+    if (event.keyCode === 37) {
+      if (solveStarted === true && player1done === false) {
+        player1done = true;
+        document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+        solves1.push(solve);
+        playersDone = playersDone + 1;
+        if (playersDone >= 4) {
+          stopSolve();
+        }
       }
     }
-  }
-  //right
-  if (event.keyCode === 39) {
-    if (solveStarted === true && player3done === false) {
-      player3done = true;
-      document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      solves3.push(solve);
-      playersDone = playersDone + 1;
-      if (playersDone >= 4) {
-        stopSolve();
+    //up
+    if (event.keyCode === 38) {
+      if (solveStarted === true && player2done === false) {
+        player2done = true;
+        document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+        solves2.push(solve);
+        playersDone = playersDone + 1;
+        if (playersDone >= 4) {
+          stopSolve();
+        }
       }
     }
-  }
-  //down
-  if (event.keyCode === 40) {
-    if (solveStarted === true && player4done === false) {
-      player4done = true;
-      document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
-      solves4.push(solve);
-      playersDone = playersDone + 1;
-      if (playersDone >= 4) {
-        stopSolve();
+    //right
+    if (event.keyCode === 39) {
+      if (solveStarted === true && player3done === false) {
+        player3done = true;
+        document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+        solves3.push(solve);
+        playersDone = playersDone + 1;
+        if (playersDone >= 4) {
+          stopSolve();
+        }
+      }
+    }
+    //down
+    if (event.keyCode === 40) {
+      if (solveStarted === true && player4done === false) {
+        player4done = true;
+        document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
+        solves4.push(solve);
+        playersDone = playersDone + 1;
+        if (playersDone >= 4) {
+          stopSolve();
+        }
       }
     }
   }
 }
 
 function keyUp() {
-  //space
-  if (event.keyCode === 32) {
-    if (startDown === true && inspectionStarted === false) {
-      document.getElementById("1").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
-      document.getElementById("2").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
-      document.getElementById("3").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
-      document.getElementById("4").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
-      inspection = inspectionStartOn + 1;
-      inspectionStarted = true;
-      startInspection();
+  if (currentScreen === 1 || currentScreen === 2) {
+    //space
+    if (event.keyCode === 32) {
+      if (startDown === true && inspectionStarted === false) {
+        document.getElementById("1").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+        document.getElementById("2").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+        document.getElementById("3").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+        document.getElementById("4").style = "-webkit-filter: brightness(0%); filter: brightness(0%);";
+        inspection = inspectionStartOn + 1;
+        inspectionStarted = true;
+        startInspection();
+      }
     }
   }
 }
