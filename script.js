@@ -295,6 +295,7 @@ function statsClicked() {
 
 function solvesList() {
   document.getElementById("solveslist").innerHTML = "";
+  addToSolvesDisplay(["Cuber 1", "Cuber 2", "Cuber 3", "Cuber 4"]);
   solvesListLoop = -1;
   while (solvesListLoop < solves1.length - 1) {
     solvesListLoop = solvesListLoop + 1;
