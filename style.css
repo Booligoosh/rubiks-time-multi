@@ -68,6 +68,10 @@ h6 {
 table {
   width: 100%;
 }
+td {
+  font-size: 1.5em;
+  font-weight: 100;
+}
 .combo-span h2 {
   display: inline;
   padding: 0.25em;
