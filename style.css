@@ -29,6 +29,15 @@ h3 {
   margin-bottom: 0.5em;
   font-weight: 100;
 }
+h4 {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  font-weight: 100;
+  font-size: 2em;
+  color: black;
+  -webkit-filter: blur(0.025em);
+  filter: blur(0.025em);
+}
 h6 {
   font-size: 5em;
   margin-top: 0;
