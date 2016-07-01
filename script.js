@@ -298,7 +298,7 @@ function solvesList() {
   solvesListLoop = -1;
   while (solvesListLoop < solves1.length - 1) {
     solvesListLoop = solvesListLoop + 1;
-    addToSolvesDisplay(clockify(solves1[solvesListLoop]));
+    addToSolvesDisplay([clockify(solves1[solvesListLoop]), clockify(solves2[solvesListLoop]), clockify(solves3[solvesListLoop]), clockify(solves4[solvesListLoop])]);
   }
   showScreen(5);
 }
@@ -361,16 +361,20 @@ function averageOfTwelvesOfArray(array) {
 }
 
 function addToSolvesDisplay(data) {
-  var h6 = document.createElement("h6");
-  var att1 = document.createAttribute("id");
-  att1.value = "solve" + document.getElementsByTagName("h6").length;
-  h6.setAttributeNode(att1);
-  var att2 = document.createAttribute("onclick");
-  att2.value = "deleteSolve(" + document.getElementsByTagName("h6").length + ")";
-  h6.setAttributeNode(att2);
-  var t = document.createTextNode(data);
-  h6.appendChild(t);
-  document.getElementById("solveslist").appendChild(h6);
+  var tr = document.createElement("tr");
+  var td1 = document.createElement("td");
+  td1.appendChild(document.createTextNode(data[0].toString()));
+  var td2 = document.createElement("td");
+  td2.appendChild(document.createTextNode(data[1].toString()));
+  var td3 = document.createElement("td");
+  td3.appendChild(document.createTextNode(data[2].toString()));
+  var td4 = document.createElement("td");
+  td4.appendChild(document.createTextNode(data[3].toString()));
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  tr.appendChild(td4);
+  document.getElementById("solveslist").appendChild(tr);
   document.getElementById("solvescount").innerHTML = solves1.length + " solves so far.";
 }
 
