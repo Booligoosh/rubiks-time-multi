@@ -65,6 +65,9 @@ h6 {
   top: 1em;
   left: 1em;
 }
+table {
+  width: 100%;
+}
 .combo-span h2 {
   display: inline;
   padding: 0.25em;
