@@ -67,9 +67,10 @@ h6 {
 }
 table {
   width: 100%;
+  margin-bottom: 1.6180339887498947em;
 }
 td {
-  font-size: 1.5em;
+  font-size: 1.6180339887498947em;
   font-weight: 100;
 }
 .combo-span h2 {
