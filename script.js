@@ -94,6 +94,8 @@ else {
 
 }
 
+document.getElementById("scramble").innerHTML = scramblers["333"].getRandomScramble().scramble_string;
+
 Array.min = function( array ){
     return Math.min.apply( Math, array );
 };
@@ -108,9 +110,11 @@ function showScreen(num) {
   document.getElementById("screen" + num).style.display = "block";
   if (num === 1 || num === 2) {
     document.getElementById("key").style.display = "block";
+    document.getElementById("scramble").style = "-webkit-filter: opacity(100); filter: opacity(100);";
   }
   else {
     document.getElementById("key").style.display = "none";
+    document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
   }
   prevScreen = currentScreen;
   currentScreen = num;
@@ -457,6 +461,7 @@ function newSolve() {
   player2done = false;
   player3done = false;
   player4done = false;
+  document.getElementById("scramble").innerHTML = scramblers["333"].getRandomScramble().scramble_string;
 }
 
 //GOOGLE CHARTS SCRIPTS
