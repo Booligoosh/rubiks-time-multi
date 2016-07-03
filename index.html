@@ -8,12 +8,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="https://booligoosh.github.io/rubiks-time-multi/z-icon-144.png">
     <link rel="icon" type="image/png" href="https://booligoosh.github.io/rubiks-time-multi/z-favicon.png">
-    <script src="https://booligoosh.github.io/rubiks-time/scramble_333.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-    </script>
   </head>
   <body id="body" onkeydown="keyDown()" onkeyup="keyUp()">
     <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time-multi/gear.svg">
@@ -83,7 +77,12 @@
       <hr>
       <h2 id="bestaverageof12"></h2>
     </div>
-
+    <script src="https://booligoosh.github.io/rubiks-time-multi/scramble_333.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
     <script src="https://booligoosh.github.io/rubiks-time-multi/script.js"></script>
     <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
