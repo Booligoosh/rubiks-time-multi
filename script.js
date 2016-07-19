@@ -333,11 +333,14 @@ function moreStats() {
     addToTable("morestats", ["Current average of 5", clockify(averagesOfFive1[averagesOfFive1.length - 1]), clockify(averagesOfFive2[averagesOfFive2.length - 1]), clockify(averagesOfFive3[averagesOfFive3.length - 1]), clockify(averagesOfFive4[averagesOfFive4.length - 1])]);
     addToTable("morestats", ["Best average of 5", clockify(Array.min(averagesOfFive1)), clockify(Array.min(averagesOfFive2)), clockify(Array.min(averagesOfFive3)), clockify(Array.min(averagesOfFive4))]);
   }
-  /*if (solves1.length >= 12) {
-    var averagesOfTwelve = averageOfTwelvesOfArray(solves1);
-    document.getElementById("currentaverageof12").innerHTML = "Current average of 12 - " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
-    document.getElementById("bestaverageof12").innerHTML = "Best average of 12 - " + clockify(Array.min(averagesOfTwelve));
-  }*/
+  if (solves1.length >= 5) {
+    var averagesOfTwelve1 = averageOfTwelvesOfArray(solves1);
+    var averagesOfTwelve2 = averageOfTwelvesOfArray(solves2);
+    var averagesOfTwelve3 = averageOfTwelvesOfArray(solves3);
+    var averagesOfTwelve4 = averageOfTwelvesOfArray(solves4);
+    addToTable("morestats", ["Current average of 12", clockify(averagesOfTwelve1[averagesOfTwelve1.length - 1]), clockify(averagesOfTwelve2[averagesOfTwelve2.length - 1]), clockify(averagesOfTwelve3[averagesOfTwelve3.length - 1]), clockify(averagesOfTwelve4[averagesOfTwelve4.length - 1])]);
+    addToTable("morestats", ["Best average of 12", clockify(Array.min(averagesOfTwelve1)), clockify(Array.min(averagesOfTwelve2)), clockify(Array.min(averagesOfTwelve3)), clockify(Array.min(averagesOfTwelve4))]);
+  }
   drawChart();
 }
 
