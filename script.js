@@ -303,11 +303,13 @@ function statsClicked() {
 
 function solvesList() {
   document.getElementById("solveslist").innerHTML = "";
-  addToSolvesDisplay(["Cuber 1", "Cuber 2", "Cuber 3", "Cuber 4"]);
+  addToTable("solveslist",["Cuber 1", "Cuber 2", "Cuber 3", "Cuber 4"]);
+  document.getElementById("solvescount").innerHTML = solves1.length + " solves so far.";
   solvesListLoop = -1;
   while (solvesListLoop < solves1.length - 1) {
     solvesListLoop = solvesListLoop + 1;
-    addToSolvesDisplay([clockify(solves1[solvesListLoop]), clockify(solves2[solvesListLoop]), clockify(solves3[solvesListLoop]), clockify(solves4[solvesListLoop])]);
+    addToTable("solveslist",[clockify(solves1[solvesListLoop]), clockify(solves2[solvesListLoop]), clockify(solves3[solvesListLoop]), clockify(solves4[solvesListLoop])]);
+    document.getElementById("solvescount").innerHTML = solves1.length + " solves so far.";
   }
   showScreen(5);
 }
@@ -369,22 +371,14 @@ function averageOfTwelvesOfArray(array) {
   return(averagesOfTwelve);
 }
 
-function addToSolvesDisplay(data) {
+function addToTable(id, data) {
   var tr = document.createElement("tr");
-  var td1 = document.createElement("td");
-  td1.appendChild(document.createTextNode(data[0].toString()));
-  var td2 = document.createElement("td");
-  td2.appendChild(document.createTextNode(data[1].toString()));
-  var td3 = document.createElement("td");
-  td3.appendChild(document.createTextNode(data[2].toString()));
-  var td4 = document.createElement("td");
-  td4.appendChild(document.createTextNode(data[3].toString()));
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  tr.appendChild(td3);
-  tr.appendChild(td4);
-  document.getElementById("solveslist").appendChild(tr);
-  document.getElementById("solvescount").innerHTML = solves1.length + " solves so far.";
+  for (var i = 0; i < data.length; i++) {
+      var td = document.createElement("td");
+      td.appendChild(document.createTextNode(data[i].toString()));
+      tr.appendChild(td);
+  }
+  document.getElementById(id).appendChild(tr);
 }
 
 function iPlus() {
