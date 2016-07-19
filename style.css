@@ -87,6 +87,9 @@ td {
   font-size: 1.6180339887498947em;
   font-weight: 100;
 }
+#morestats td:nth-child(1) {
+  text-align: right;
+}
 .combo-span h2 {
   display: inline;
   padding: 0.25em;
