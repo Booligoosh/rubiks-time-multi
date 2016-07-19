@@ -323,9 +323,11 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  document.getElementById("average").innerHTML = "Average - " + clockify(averageOfArray(solves1));
+  addToTable("morestats", ["", "Cuber 1", "Cuber 2", "Cuber 3", "Cuber 4"]);
+  addToTable("morestats", ["Average", clockify(averageOfArray(solves1)), clockify(averageOfArray(solves2)), clockify(averageOfArray(solves3)), clockify(averageOfArray(solves4))]);
   if (solves1.length >= 5) {
-    var averagesOfFive = averageOfFivesOfArray(solves1);
+    var averagesOfFive1 = averageOfFivesOfArray(solves1);
+    var averagesOfFive1 = averageOfFivesOfArray(solves1);
     document.getElementById("currentaverageof5").innerHTML = "Current average of 5 - " + clockify(averagesOfFive[averagesOfFive.length - 1]);
     document.getElementById("bestaverageof5").innerHTML = "Best average of 5 - " + clockify(Array.min(averagesOfFive));
   }
