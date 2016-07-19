@@ -89,6 +89,7 @@ td {
 }
 #morestats td:nth-child(1) {
   text-align: right;
+  width: 11em;
 }
 .combo-span h2 {
   display: inline;
