@@ -146,7 +146,7 @@ function startSolve() {
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
   document.getElementById("numbers").innerHTML = clockify(solve);
-  document.getElementById("scramble").style = "-webkit-filter: opacity(100); filter: opacity(100);";
+  document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
@@ -157,7 +157,7 @@ function stopSolve() {
   document.getElementById("screen2sub").style.display = "block";
   document.getElementById("screen2sub").innerHTML = "Ready";
   document.getElementById("numbers").innerHTML = clockify(solve);
-  document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
+  document.getElementById("scramble").style = "-webkit-filter: opacity(100); filter: opacity(100);";
   newSolve();
 }
 
