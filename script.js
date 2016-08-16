@@ -152,14 +152,6 @@ function stopSolve() {
   document.getElementById("screen2sub").style.display = "block";
   document.getElementById("screen2sub").innerHTML = "Ready";
   document.getElementById("numbers").innerHTML = clockify(solve);
-  document.getElementById("time1").style = "opacity: 11; filter: alpha(opacity=1);";
-  document.getElementById("time2").style = "opacity: 1; filter: alpha(opacity=1);";
-  document.getElementById("time3").style = "opacity: 1; filter: alpha(opacity=1);";
-  document.getElementById("time4").style = "opacity: 1; filter: alpha(opacity=1);";
-  document.getElementById("time1").innerHTML = clockify(solves1[solves1.length - 1]);
-  document.getElementById("time2").innerHTML = clockify(solves2[solves2.length - 1]);
-  document.getElementById("time3").innerHTML = clockify(solves3[solves3.length - 1]);
-  document.getElementById("time4").innerHTML = clockify(solves4[solves4.length - 1]);
   newSolve();
 }
 
@@ -209,6 +201,8 @@ function keyDown() {
         player1done = true;
         document.getElementById("1").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
         solves1.push(solve);
+        document.getElementById("time1").style = "opacity: 1; filter: alpha(opacity=1);";
+        document.getElementById("time1").innerHTML = clockify(solves1[solves1.length - 1]);
         playersDone = playersDone + 1;
         if (playersDone >= 4) {
           stopSolve();
@@ -221,6 +215,8 @@ function keyDown() {
         player2done = true;
         document.getElementById("2").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
         solves2.push(solve);
+        document.getElementById("time2").style = "opacity: 1; filter: alpha(opacity=1);";
+        document.getElementById("time2").innerHTML = clockify(solves2[solves2.length - 1]);
         playersDone = playersDone + 1;
         if (playersDone >= 4) {
           stopSolve();
@@ -233,6 +229,8 @@ function keyDown() {
         player3done = true;
         document.getElementById("3").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
         solves3.push(solve);
+        document.getElementById("time3").style = "opacity: 1; filter: alpha(opacity=1);";
+        document.getElementById("time3").innerHTML = clockify(solves3[solves3.length - 1]);
         playersDone = playersDone + 1;
         if (playersDone >= 4) {
           stopSolve();
@@ -245,6 +243,8 @@ function keyDown() {
         player4done = true;
         document.getElementById("4").style = "-webkit-filter: brightness(100%); filter: brightness(100%);";
         solves4.push(solve);
+        document.getElementById("time4").style = "opacity: 1; filter: alpha(opacity=1);";
+        document.getElementById("time4").innerHTML = clockify(solves4[solves4.length - 1]);
         playersDone = playersDone + 1;
         if (playersDone >= 4) {
           stopSolve();
