@@ -125,6 +125,7 @@ function showScreen(num) {
 }
 
 function startInspection() {
+  document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
   inspectionInterval = 1;  // 1 Second
   inspection = inspection - 1;
   document.getElementById("numbers").innerHTML = inspection.toString();
@@ -146,7 +147,6 @@ function startSolve() {
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
   document.getElementById("numbers").innerHTML = clockify(solve);
-  document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
