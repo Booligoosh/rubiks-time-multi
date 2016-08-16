@@ -1,3 +1,7 @@
+document.getElementById("time1").style = "opacity: 0; filter: alpha(opacity=0);";
+document.getElementById("time2").style = "opacity: 0; filter: alpha(opacity=0);";
+document.getElementById("time3").style = "opacity: 0; filter: alpha(opacity=0);";
+document.getElementById("time4").style = "opacity: 0; filter: alpha(opacity=0);";
 if (localStorage.rubiksMulti == undefined) {
   var startDown = false;
   var startUp = false;
